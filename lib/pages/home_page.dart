@@ -94,7 +94,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Container(
                     height: 150,
-                    color: Colors.white,
+                    color: Colors.transparent,
                     alignment: Alignment.topLeft,
                     child: Row(
                       children: [
@@ -102,7 +102,7 @@ class HomePage extends StatelessWidget {
                         Container(
                           width: 210,
                           height: 150,
-                          color: Colors.white,
+                          color: Colors.transparent,
                           child: Padding(
                             padding: const EdgeInsets.only(top: 8.0, right: 8.0, bottom: 8.0),
                             child: Column(
@@ -113,13 +113,14 @@ class HomePage extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 12, 
                                     fontWeight: FontWeight.bold,
+                                    color: Colors.white
                                   ),
                                 ),
                                 SizedBox(height: 3,),
                                 Text(
                                   "Gerakan sosial berbagi makanan secara gratis bagi mereka yang membutuhkan",
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 10),
+                                  style: TextStyle(fontSize: 10, color: Colors.white),
                                 )
                               ],
                             ),
