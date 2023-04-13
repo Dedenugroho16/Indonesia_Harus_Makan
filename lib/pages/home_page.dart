@@ -4,12 +4,52 @@
 
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({
-    super.key,
-  });
+class HomePage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _HomePage();
+  }
+}
+
+class _HomePage extends State<HomePage> {
+  int _current = 0;
+  final CarouselController _controller = CarouselController();
+
+  final List<Widget> myData = [
+              Container(
+              decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/img/1.jpeg"), fit: BoxFit.cover),
+            ),
+              ),
+              Container(
+              decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/img/2.jpeg"), fit: BoxFit.cover),
+            ),
+              ),
+              Container(
+              decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/img/3.jpeg"), fit: BoxFit.cover),
+            ),
+              ),
+              Container(
+              decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/img/4.jpeg"), fit: BoxFit.cover),
+            ),
+              ),
+              Container(
+              decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/img/5.jpeg"), fit: BoxFit.cover),
+            ),
+              ),
+              Container(
+              decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/img/6.jpeg"), fit: BoxFit.cover),
+            ),
+              ),
+            ];
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +134,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Container(
                     height: 150,
-                    color: Colors.white,
+                    color: Colors.transparent,
                     alignment: Alignment.topLeft,
                     child: Row(
                       children: [
@@ -102,7 +142,7 @@ class HomePage extends StatelessWidget {
                         Container(
                           width: 210,
                           height: 150,
-                          color: Colors.white,
+                          color: Colors.transparent,
                           child: Padding(
                             padding: const EdgeInsets.only(top: 8.0, right: 8.0, bottom: 8.0),
                             child: Column(
@@ -113,13 +153,14 @@ class HomePage extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 12, 
                                     fontWeight: FontWeight.bold,
+                                    color: Colors.white
                                   ),
                                 ),
                                 SizedBox(height: 3,),
                                 Text(
                                   "Gerakan sosial berbagi makanan secara gratis bagi mereka yang membutuhkan",
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 10),
+                                  style: TextStyle(fontSize: 10, color: Colors.white),
                                 )
                               ],
                             ),
@@ -129,7 +170,46 @@ class HomePage extends StatelessWidget {
                     )
                     
                   ),
-                  
+
+                  // carousel slider
+                  Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        CarouselSlider(
+          items: myData,
+          carouselController: _controller,
+          options: CarouselOptions(
+              height: 300,
+              viewportFraction: 1,
+              autoPlay: true,
+              enlargeCenterPage: true,
+              aspectRatio: 16/9,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _current = index;
+                });
+              }),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: myData.asMap().entries.map((entry) {
+            return GestureDetector(
+              onTap: () => _controller.animateToPage(entry.key),
+              child: Container(
+                width: 8.0,
+                height: 8.0,
+                margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: (Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white
+                            : Colors.white)
+                        .withOpacity(_current == entry.key ? 0.9 : 0.4)),
+              ),
+            );
+          }).toList(),
+        ),
+      ]),
 
 
                 ],
