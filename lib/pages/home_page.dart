@@ -55,13 +55,13 @@ class _HomePage extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Color(0xFFE76F51),
         elevation: 0,
         title: Text('Home'),
         actions: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.orange,
+              backgroundColor: Color(0xFFE76F51),
               elevation: 0
             ),
             onPressed: (){ 
@@ -77,7 +77,7 @@ class _HomePage extends State<HomePage> {
           Container(
             padding: EdgeInsets.all(20),
             alignment: Alignment.bottomLeft,
-            color: Colors.orange,
+            color: Color(0xFFE76F51),
             width: double.infinity,
             height: 100,
             child: Text(
@@ -124,15 +124,28 @@ class _HomePage extends State<HomePage> {
           Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage("assets/img/bg.png"), fit: BoxFit.cover),
-            ),
+            color: Color(0xFFF4A261),
           ),
 
           ListView(
             children: [
               Column(
                 children: [
+          TextField(
+          style: TextStyle(color: Colors.black),
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.white,
+        prefixIcon: Icon(Icons.search),
+        hintText: 'Cari di Google',
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+          ),
+          onChanged: (value) {
+          // Lakukan sesuatu dengan nilai pencarian
+          },
+          ),
                   Container(
                     height: 150,
                     color: Colors.transparent,
