@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indonesia_harus_makan/pages/reg.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
@@ -15,7 +16,6 @@ class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: ListView(
@@ -37,12 +37,10 @@ class _loginState extends State<login> {
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.red[900],
                 contentPadding:
                     EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 labelText: "Username",
-                labelStyle:
-                    TextStyle(color: Color.fromARGB(255, 205, 202, 202)),
+                labelStyle: TextStyle(color: Colors.black),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -61,12 +59,10 @@ class _loginState extends State<login> {
               textInputAction: TextInputAction.done,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.red[900],
                 contentPadding:
                     EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 labelText: "Password",
-                labelStyle:
-                    TextStyle(color: Color.fromARGB(255, 205, 202, 202)),
+                labelStyle: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -99,23 +95,25 @@ class _loginState extends State<login> {
                   )),
             ),
             SizedBox(height: 50),
-            Center(
-              child: RichText(
-                text: TextSpan(
-                  text: "Belum punya akun? ",
-                  style: TextStyle(
-                    color: Colors.black,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Belum punya akun?"),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegisterPage()));
+                  },
+                  child: Text(
+                    'Daftar',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.red),
                   ),
-                  children: [
-                    TextSpan(
-                      text: "Daftar",
-                      style: TextStyle(
-                          color: Colors.red,
-                          decoration: TextDecoration.underline),
-                    ),
-                  ],
-                ),
-              ),
+                )
+              ],
             ),
           ],
         ),
