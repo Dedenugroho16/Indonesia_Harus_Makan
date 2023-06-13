@@ -139,18 +139,18 @@ class _HomePage extends State<HomePage> {
                       Column(
                         children: [
                           Text(
-                            "Hello Username!",
+                            "Hi,Yuk ikutan kontribusi !",
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 13,
                             ),
                           ),
                           Text(
-                            "Welcome to UMYU",
+                            "INDONESIA HARUS MAKAN?",
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 13,
+                              fontSize: 20,
                             ),
                           ),
                         ],
@@ -227,11 +227,11 @@ class _HomePage extends State<HomePage> {
                     decoration: InputDecoration(
                       contentPadding:
                           EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                      hintText: "Find your item",
+                      hintText: "Search indonesia harus makan adalah?",
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      prefixIcon: Icon(Icons.search),
+                      suffixIcon: Icon(Icons.search),
                     ),
                   ),
                 ),
@@ -245,7 +245,7 @@ class _HomePage extends State<HomePage> {
                           children: [
                             Image.asset("assets/img/logo.png"),
                             Container(
-                              width: 210,
+                              width: 260,
                               height: 150,
                               color: Colors.transparent,
                               child: Padding(
@@ -257,9 +257,9 @@ class _HomePage extends State<HomePage> {
                                     Text(
                                       "Indonesia Harus Makan",
                                       style: TextStyle(
-                                          fontSize: 12,
+                                          fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.white),
+                                          color: Colors.black),
                                     ),
                                     SizedBox(
                                       height: 3,
@@ -268,7 +268,7 @@ class _HomePage extends State<HomePage> {
                                       "Gerakan sosial berbagi makanan secara gratis bagi mereka yang membutuhkan",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize: 10, color: Colors.black),
+                                          fontSize: 12, color: Colors.black),
                                     )
                                   ],
                                 ),

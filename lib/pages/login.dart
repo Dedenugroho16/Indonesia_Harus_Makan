@@ -88,7 +88,7 @@ class _loginState extends State<login> {
               },
               child: Text("Sign In"),
               style: ElevatedButton.styleFrom(
-                  primary: Colors.red[900],
+                  primary: Colors.orange,
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -109,8 +109,9 @@ class _loginState extends State<login> {
                   child: Text(
                     'Daftar',
                     style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Colors.red),
+                      decoration: TextDecoration.underline,
+                      color: Colors.orange,
+                    ),
                   ),
                 )
               ],
