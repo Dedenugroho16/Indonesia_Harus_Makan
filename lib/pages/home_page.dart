@@ -147,7 +147,7 @@ class _HomePage extends State<HomePage> {
                             ),
                           ),
                           Text(
-                            "Welcome to UMYU",
+                            "Welcome to Indonesia Harus Makan",
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 13,
