@@ -99,24 +99,17 @@ class _HomePage extends State<HomePage> {
                 children: [
                   ListTile(
                     onTap: () {
-                      print("Home Diklik");
+                      print("Jadwal Diklik");
                     },
-                    leading: Icon(Icons.home),
-                    title: Text("Home"),
+                    leading: Icon(Icons.schedule_outlined),
+                    title: Text("Jadwal Kegiatan"),
                   ),
                   ListTile(
                     onTap: () {
-                      print("Donasi Diklik");
+                      print("Notifikasi Diklik");
                     },
-                    leading: Icon(Icons.account_balance_wallet_rounded),
-                    title: Text("Donasi"),
-                  ),
-                  ListTile(
-                    onTap: () {
-                      print("Laporan Diklik");
-                    },
-                    leading: Icon(Icons.document_scanner_rounded),
-                    title: Text("Laporan"),
+                    leading: Icon(Icons.notifications_active),
+                    title: Text("Notifikasi"),
                   ),
                 ],
               ),
@@ -147,7 +140,7 @@ class _HomePage extends State<HomePage> {
                             ),
                           ),
                           Text(
-                            "INDONESIA HARUS MAKAN?",
+                            "Welcome to Indonesia Harus Makan",
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,
