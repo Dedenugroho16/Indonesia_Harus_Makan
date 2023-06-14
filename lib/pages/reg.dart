@@ -27,7 +27,7 @@ class _RegisterPageState extends State<RegisterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/umyu.png',
+              'assets/img/logo.png',
               height: 200,
               width: 200,
             ),
@@ -142,7 +142,7 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Text(
                 'Login',
                 style: TextStyle(
-                    decoration: TextDecoration.underline, color: Colors.blue),
+                    decoration: TextDecoration.underline, color: Colors.orange),
               ),
             )
           ],
